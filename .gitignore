@@ -9,5 +9,8 @@
 *.fdb_latexmk
 *.mat
 *.fig
-
+*.bbl
+*.blg
+*.blg
+*.aux
 毕业论文答辩 171840719 张凌志.pdf
