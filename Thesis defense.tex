@@ -130,9 +130,32 @@
 
 
 %------------------------------------------------
-%\subsection{HF-SCF计算}
+\subsection{从多电子哈密顿到单电子平均场近似}
 \begin{frame}
-\frametitle{研究背景与意义}
+	\frametitle{从多电子哈密顿到单电子平均场近似}
+	%薛定谔方程
+	%\begin{align}
+	%	\hat{H}\Psi = i\hbar \frac{\partial \Psi}{\partial t}
+	%\end{align}
+	多电子哈密顿量
+	\begin{align}
+		\hat{H}  = \sum_{i=1}^{n} -\frac{1}{2} \nabla_i ^ {2} + \sum_{a=1}^{N_a} -\frac{1}{2} \nabla_{a} ^ {2} - 
+		\sum_{i=1}^{n}\sum_{a=1}^{N_a} \frac{Z_a}{r_{ai}} + \sum_{a>b} \frac{Z_a Z_b}{r_{ab}} + 
+		\sum_{i>j} \frac{1}{r_{ij}}
+	\end{align}
+
+	平均场近似：将多体问题转变为单体问题
+	\begin{align}
+		\hat{H}  = \sum_{i=1}^{n} \hat{H}_i
+	\end{align}
+
+
+\end{frame}
+
+%------------------------------------------------
+\subsection{HF-SCF计算}
+\begin{frame}
+\frametitle{HF-SCF计算}
 Hartree-Fock-Roothaan方程
 \begin{equation}
 	FC=SCE
@@ -153,9 +176,9 @@ Hartree-Fock-Roothaan方程
 	\begin{itemize}
 		\item 将DIIS算法及其衍生算法应用在Hartree-Fock计算中；\\
 		DIIS算法、EDIIS算法与C$^2$DIIS算法
-		\item 直接最小化算法在Hartree-Fock计算中的直接应用；\\
+		\item 将直接最小化算法应用在Hartree-Fock计算中；\\
 		梯度下降法、拟牛顿法、RFO算法、RS-RFO算法与QN/DIIS算法
-		\item 确定一种算法的组合以应对大多数体系。
+		\item 确定一种算法的组合策略以应对大多数体系的HF计算。
 	\end{itemize}
 
 \end{frame}
@@ -181,6 +204,7 @@ Hartree-Fock-Roothaan方程
 	\frametitle{EDIIS算法与DIIS算法结果比较}
 	二茂铁\\
 	RHF/6-31G基组
+
 	\begin{figure}[ht!]
 		\centering
 		\begin{minipage}{0.4\linewidth}
@@ -284,6 +308,8 @@ Hartree-Fock-Roothaan方程
 	\frametitle{结果比较}
 	苯分子\\
 	UHF/6-31G基组
+
+	
 	\begin{figure}[ht!]
 		\centering
 		\begin{minipage}{0.4\linewidth}
@@ -324,6 +350,7 @@ Hartree-Fock-Roothaan方程
 	\frametitle{结果比较}
 	三氯化铁\\
 	UHF/铁原子cc-pvdz基组，氯原子6-31G基组
+
 	\begin{figure}[ht!]
 		\centering
 		\begin{minipage}{0.4\linewidth}
@@ -335,7 +362,7 @@ Hartree-Fock-Roothaan方程
 		\begin{minipage}{0.4\linewidth}
 			\centering
 			\includegraphics[height=3cm]{figure/FeCl3/FD6.png}
-			\subcaption{收敛区域能量变化趋势图}
+			\subcaption{收敛区域能量变化趋势}
 			\label{fig:FeCl3:FD}
 		\end{minipage}
 	\end{figure}
