@@ -153,9 +153,9 @@
 \end{frame}
 
 %------------------------------------------------
-\subsection{HF-SCF计算}
+\subsection{Hartree-Fock-SCF计算}
 \begin{frame}
-\frametitle{HF-SCF计算}
+\frametitle{Hartree-Fock-SCF计算}
 Hartree-Fock-Roothaan方程
 \begin{equation}
 	FC=SCE
@@ -178,7 +178,7 @@ Hartree-Fock-Roothaan方程
 		DIIS算法、EDIIS算法与C$^2$DIIS算法
 		\item 将直接最小化算法应用在Hartree-Fock计算中；\\
 		梯度下降法、拟牛顿法、RFO算法、RS-RFO算法与QN/DIIS算法
-		\item 确定一种算法的组合策略以应对大多数体系的HF计算。
+		\item 确定一种算法的组合策略以应对大多数体系的Hartree-Fock计算。
 	\end{itemize}
 
 \end{frame}
@@ -221,7 +221,7 @@ Hartree-Fock-Roothaan方程
 		\end{minipage}
 		\label{fig:ferrocene}
 	\end{figure}
-	\centerline{EDIIS算法可以有效降低收敛结果能量。}
+	\centerline{EDIIS算法的使用可以在初期快速降低迭代过程中的能量。}
 \end{frame}
 
 %------------------------------------------------
@@ -238,16 +238,16 @@ Hartree-Fock-Roothaan方程
 			\toprule
 			\textbf{算法}			&\textbf{能量/(a.u.)}	&\textbf{迭代圈数}\\
 			\midrule
-			EDIIS(能量面扫描）			&-891.736841		&497\\
-			EDIIS(能量面扫描）+DIIS		&-891.701108		&93\\
-			EDIIS(障碍法）				& -891.734354		&538\\
-			EDIIS(障碍法）+DIIS			& -891.734354		&90\\
 			DIIS						& -891.580787		&57\\
+			EDIIS(障碍法）				& -891.734354		&538\\
+			EDIIS(能量面扫描）			&-891.736841		&497\\
+			EDIIS(障碍法）+DIIS			& -891.734354		&90\\
+			EDIIS(能量面扫描）+DIIS		&-891.701108		&93\\
 			\bottomrule
 		\end{tabular}
 		\vspace{0.2cm}
 	\end{table}
-	\centerline{EDIIS算法的使用可以在初期快速降低收敛结果的能量。}
+	\centerline{EDIIS算法可以有效降低收敛结果能量。}
 \end{frame}
 
 %------------------------------------------------
@@ -279,7 +279,7 @@ Hartree-Fock-Roothaan方程
 \subsection{直接最小化算法}
 \begin{frame}
 	\frametitle{直接最小化算法}
-	HF方法的本质是在归一化条件下优化HF基态能量
+	Hartree-Fock方法的本质是在归一化条件下优化Hartree-Fock基态能量
 	\begin{equation}
 	E_{\text{Ground}}=\text{Min}\left \{ E_{\text{HF}}(C), C \in  \{C| C^TSC=I  \} \right \}
 	\end{equation}
@@ -378,9 +378,9 @@ Hartree-Fock-Roothaan方程
 	总结
 	\begin{itemize}
 		\item[1)]
-		 实现了DIIS及其衍生算法与QC算法，并对其进行测试；
+		 实现了DIIS及其衍生算法与直接最小化算法，并对其进行测试；
 		\item[2)] 
-		 设计出一种组合算法，可以对大多数体系进行HF计算，包括含过渡金属的小分子体系。
+		 设计出一种组合算法，可以对大多数体系进行Hartree-Fock计算，包括含过渡金属的小分子体系。
 	\end{itemize}
 	
 	展望
